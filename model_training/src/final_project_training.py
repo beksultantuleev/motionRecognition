@@ -10,7 +10,8 @@ import random
 from keras.models import Sequential
 from keras.layers import Dense
 from keras import optimizers
-from keras.utils import to_categorical
+# from keras.utils import to_categorical
+from tensorflow.keras.utils import to_categorical
 
 
 data_split_tuner_value =10  #13 for succ #total 50
