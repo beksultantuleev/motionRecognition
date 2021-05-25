@@ -26,8 +26,8 @@ format = re.compile('\d+\,[0-9]{1}\,-?(\d+)\,-?(\d+)\,-?(\d+)')
 # format = re.compile('\d+\,[A-Z]{1}\,-?(\d+)\,-?(\d+)\,-?(\d+)')
 # print(re.search(format,'1,a,123,-15,-2566').group()) example on data format
 
-log_file_path = "dataset/data_motion_recognition/keras2.3/boxing_imp.txt" #data_log_temp.txt first_succ_data/data_log.txt
-dataset_path = "dataset/data_motion_recognition/keras2.3/dataset.txt"
+log_file_path = "model_training/dataset/data_motion_recognition/keras2.3/boxing_imp.txt" #data_log_temp.txt first_succ_data/data_log.txt
+dataset_path = "model_training/dataset/data_motion_recognition/keras2.3/dataset.txt"
 with open(log_file_path,'r') as data_file:
     with open(dataset_path,'w') as out_file:
         for counter,line in enumerate(data_file):
@@ -111,12 +111,12 @@ print(f"""Ratio trainded data  {len(train_data)/len(sample_index)}
 
 
 
-model.save('trained_model/motion_recognition/keras2.3/boxing.h5')
-f = open("trained_model/motion_recognition/keras2.3/boxing_log.txt", "w")
+model.save('model_training/trained_model/motion_recognition/keras2.3/boxing.h5')
+f = open("model_training/trained_model/motion_recognition/keras2.3/boxing_log.txt", "w")
 f.write(result)
 f.close()
-np.save('trained_model/motion_recognition/keras2.3/validation_data_boxing.npy', test_data)
-np.save('trained_model/motion_recognition/keras2.3/validation_labels_boxing.npy', test_labels)
+np.save('model_training/trained_model/motion_recognition/keras2.3/validation_data_boxing.npy', test_data)
+np.save('model_training/trained_model/motion_recognition/keras2.3/validation_labels_boxing.npy', test_labels)
 
 # # model = Sequential()
 # # model.add(Dense(32,input_shape =(train_shape,),name='input_layer'))
